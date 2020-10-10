@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BodyStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [BodyStatsController::class, 'index'])->name('body_stats.index');
+Route::post('/result', [BodyStatsController::class, 'result'])->name('body_stats.result');
+Route::post('/save', [BodyStatsController::class, 'save'])->name('body_stats.save');

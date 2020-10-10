@@ -12,7 +12,8 @@
   </header>
   <main>
     <section id="calc">
-      <form action="#" method="post">
+      <form action="{{ route('body_stats.result') }}" method="post">
+        @csrf
         <div>
           <label for="date">Date:</label>
           <input type="date" name="date" id="date">
@@ -39,7 +40,17 @@
     </section>
     <section id="result">
       @if (isset($result))
-        <h2>Body Fat</h2>
+        <h2>Result</h2>
+        <p>Wight: {{ $result['wight'] }}lb</p>
+        <p>Fat: {{ $result['fat_lb'] }}lb</p>
+        <p>Muscle: {{ $result['muscle_lb'] }}lb</p>
+        <form action="{{ route('body_stats.save') }}" method="post">
+          @csrf
+          @foreach ($result as $key =>$item)
+          <input type="hidden" name="{{ $key }}" value="{{ $item }}">   
+          @endforeach
+          <input type="submit" value="Save">
+        </form>
       @endif
     </section>
     <section id="table">
@@ -58,9 +69,9 @@
               <td>{{ $result->date }}</td>
               <td>{{ $result->wight }}</td>
               <td>{{ $result->fat_percent }}</td>
-              <td>{{ $result->fatlb }}</td>
+              <td>{{ $result->fat_lb }}</td>
               <td>{{ $result->muscle_percent }}</td>
-              <td>{{ $result->musclelb }}</td>
+              <td>{{ $result->muscle_lb }}</td>
             </th>
           @endforeach
         @endif
