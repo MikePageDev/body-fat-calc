@@ -57,9 +57,9 @@
             <tr>
               <td>{{ $result->date }}</td>
               <td>{{ $result->wight }}</td>
-              <td>{{ $result->fat% }}</td>
+              <td>{{ $result->fat_percent }}</td>
               <td>{{ $result->fatlb }}</td>
-              <td>{{ $result->muscle% }}</td>
+              <td>{{ $result->muscle_percent }}</td>
               <td>{{ $result->musclelb }}</td>
             </th>
           @endforeach
