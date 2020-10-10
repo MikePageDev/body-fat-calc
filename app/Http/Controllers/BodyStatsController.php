@@ -42,7 +42,7 @@ class BodyStatsController extends Controller
     // Save the results
     public function save(Request $result)
     {
-      dd($result);
+      $bodyStat = new BodyStat();
     }
 
     // Get passed results
