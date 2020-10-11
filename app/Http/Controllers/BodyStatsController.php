@@ -56,7 +56,7 @@ class BodyStatsController extends Controller
 
       $bodyStat->save();
 
-      return view('home', ['pastResults' => $this->getPastResults()]);
+      return redirect()->route('body_stats.index', ['pastResults' => $this->getPastResults()]);
     }
 
     // Get passed results
