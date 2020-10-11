@@ -43,12 +43,26 @@ class BodyStatsController extends Controller
     public function save(Request $result)
     {
       $bodyStat = new BodyStat();
+
+      $bodyStat->date = $result['date'];
+      $bodyStat->wight = $result['wight'];
+      $bodyStat->fat_percent = $result['fat_percent'];
+      $bodyStat->fat_lb = $result['fat_lb'];
+
+      if (!empty($result['muscle_percent'])) {
+        $bodyStat->muscle_percent = $result['muscle_percent'];
+        $bodyStat->muscle_lb = $result['muscle_lb'];
+      }
+
+      $bodyStat->save();
+
+      return view('home', ['pastResults' => $this->getPastResults()]);
     }
 
     // Get passed results
     public function getPastResults()
     {
-      $pastResults = BodyStat::get()->sortBy('date');
+      $pastResults = BodyStat::orderBy('date', 'desc')->get();
 
       return $pastResults;
     }

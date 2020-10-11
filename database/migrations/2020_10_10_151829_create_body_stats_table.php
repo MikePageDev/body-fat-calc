@@ -19,8 +19,8 @@ class CreateBodyStatsTable extends Migration
             $table->float('wight');
             $table->float('fat_percent');
             $table->float('fat_lb');
-            $table->float('muscle_percent');
-            $table->float('muscle_lb');
+            $table->float('muscle_percent')->nullable();
+            $table->float('muscle_lb')->nullable();
             $table->timestamps();
         });
     }
