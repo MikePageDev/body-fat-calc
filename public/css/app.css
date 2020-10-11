@@ -1,0 +1,85 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#home {
+  margin: 50px;
+}
+
+#home .error {
+  color: #ff0000;
+}
+
+#home h1 {
+  text-align: center;
+  margin: 15px;
+  font-size: 40px;
+}
+
+#home #calc .calc_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 50px 0;
+}
+
+#home #calc .calc_form .form_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#home #calc .calc_form .form_group input {
+  margin: 0 5px;
+}
+
+#home #result {
+  margin: 0 25% 50px 25%;
+  text-align: center;
+  border: 1px #000 solid;
+  background-color: #dddddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#home #result h2,
+#home #result p,
+#home #result input {
+  margin: 2px;
+}
+
+#home #table table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#home #table th {
+  background-color: #ddd;
+}
+
+#home #table th,
+#home #table td {
+  padding: 10px 0;
+}
+
+#home #table table,
+#home #table th,
+#home #table td {
+  border: 1px solid black;
+}
+
+#home .btn {
+  padding: 0 10px;
+}
+/*# sourceMappingURL=app.css.map */
