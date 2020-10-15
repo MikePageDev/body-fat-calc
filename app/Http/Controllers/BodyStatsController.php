@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\BodyStat;
 
 class BodyStatsController extends Controller
@@ -10,12 +11,16 @@ class BodyStatsController extends Controller
     // Index
     public function index()
     {
+      Log::info('index');
+
       return view('home', ['pastResults' => $this->getPastResults()]);
     }
 
     // Result
     public function result(Request $request)
     {
+      Log::info('result');
+
       request()->validate([
         'date' => 'required',
         'wight' => 'required',
@@ -76,5 +81,10 @@ class BodyStatsController extends Controller
       $lb = $onePercent * $percent;
 
       return $lb;
+    }
+
+    public function test()
+    {
+      echo 'test completed';
     }
 }
