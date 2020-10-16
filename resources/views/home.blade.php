@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <title>Body Fat Calculator</title>
 </head>
+<a href="{{ route('body_stats.test') }}">test</a>
 <body id="home">
   <header>
     <h1>Body Fat Calculator</h1>
