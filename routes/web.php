@@ -17,3 +17,5 @@ use App\Http\Controllers\BodyStatsController;
 Route::get('/', [BodyStatsController::class, 'index'])->name('body_stats.index');
 Route::post('/result', [BodyStatsController::class, 'result'])->name('body_stats.result');
 Route::post('/save', [BodyStatsController::class, 'save'])->name('body_stats.save');
+
+Route::get('/test', [BodyStatsController::class, 'test'])->name('body_stats.test');
